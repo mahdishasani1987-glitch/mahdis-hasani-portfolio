@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهدیس حسنی | ادمین اینستاگرام و طراح گرافیک</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --card-bg: #111827;
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.15);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border: #1f2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+            padding: 3rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+        }
+
+        .title-tag {
+            display: inline-block;
+            background: var(--primary-glow);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        h1 {
+            font-size: 2.7rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            letter-spacing: -1px;
+        }
+
+        .typed-text {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            height: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: border-color 0.3s;
+        }
+
+        .card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        p, li {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        .portfolio-showcase {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .portfolio-title {
+            font-size: 1.1rem;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .post-image-container {
+            width: 100%;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .post-image-container img, .post-image-container video {
+            width: 100%;
+            max-width: 650px;
+            border-radius: 12px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .caption-box {
+            background: #0b0f19;
+            border-right: 3px solid var(--primary);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 1.25rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #d1d5db;
+        }
+
+        .casestudy-box {
+            background: #070a12;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-right: 4px solid var(--primary);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #d1d5db;
+        }
+
+        .casestudy-box strong {
+            color: #ffffff;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .skill-badge {
+            background: rgba(56, 189, 248, 0.05);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .contact-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(56, 189, 248, 0.03);
+            border: 1px solid var(--border);
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: border-color 0.2s;
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary);
+        }
+
+        footer {
+            width: 100%;
+            max-width: 950px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 1rem;
+            border-top: 1px solid var(--border);
+            margin-top: auto;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: #0b0f19;
+            padding: 0.75rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            h1 { font-size: 2.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Mahdis Hasani</div>
+        <ul class="nav-links">
+            <li><a href="#about">مسیر من</a></li>
+            <li><a href="#portfolio">کیس‌استادی‌ها</a></li>
+            <li><a href="#skills">تخصص‌ها</a></li>
+            <li><a href="#contact">ارتباط</a></li>
+        </ul>
+        <a href="#contact" class="btn" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">ارتباط مستقیم</a>
+    </nav>
+
+    <div class="container">
+        <header id="about">
+            <div class="title-tag">Social Media Admin & Content Strategist</div>
+            <h1>مهدیس حسنی</h1>
+            <div class="typed-text" id="typedOutput">مدیریت اینستاگرام، ایده و تبدیل مخاطب به مشتری</div>
+        </header>
+
+        <!-- بخش درباره من با تاکید روی ادمین‌فروشی و درک بیزنس -->
+        <section class="card">
+            <h2>درباره من</h2>
+            <p>من ۲۰ ساله هستم. باور دارم ادمین اینستاگرام نباید فقط دکمه انتشار پست و استوری را بزند؛ ادمین باید دغدغه‌ی رشد پیج، شناخت رفتار مخاطب و ایده‌پردازی داشته باشد. مسیر یادگیری‌ام را با دوره‌های تخصصی، کارآموزی، آزمون‌ها و در حال اخذ مدرک از <strong>سازمان فنی‌حرفه‌ای و سرتیفیکیت از هاروارد</strong> (با نمره عالی) و کارِ فشرده زیر نظر منتورم، <strong>سرکار خانم غزاله گلچقانه</strong>، جلو برده‌ام.</p>
+            <p style="margin-top: 1rem;">داشتنِ سابقه کار به عنوان <strong>ادمین فروش</strong> به من یاد داده که انتهای هر استوری و پست قرار است چه فروشی یا تعاملی رقم بخورد. من زبانِ بازار و نیازِ مخاطب را می‌فهمم و آماده‌ام تا با انگیزه، دقت و ایده‌های خلاقانه در کنار یک تیمِ حرفه‌ای رشد کنم.</p>
+        </section>
+
+        <!-- بخش نمونه‌کارها همراه با کیس‌استادی و کپشن‌های اصلی -->
+        <section id="portfolio" class="card">
+            <h2>پروژه‌ها و کیس‌استادی‌های تخصصی (Case Studies)</h2>
+            <p>اینجا پروژه‌هایی را می‌بینید که نشان می‌دهد چطور از ایده تا اجرا و تعامل پیش رفته‌ام:</p>
+            
+            <!-- کیس‌استادی اول -->
+            <div class="portfolio-showcase">
+                <div class="portfolio-title">پست اسلایدی اول: معماری پورتفوی و مدیریت ریسک</div>
+                <div class="post-image-container">
+                    <img src="1.png" alt="نمونه پست اسلایدی مالی اول">
+                </div>
+                
+                <div class="caption-box">
+                    <strong style="color: #ffffff; display: block; margin-bottom: 0.5rem;">متن کپشن پست:</strong>
+                    ریسک، جزء جدایی‌ناپذیر بازارهای مالی است؛ اما تفاوت میان یک سرمایه‌گذاری بی‌هوده و یک رشد پایدار، در «نحوه‌ی مدیریت و مهار» آن معنا پیدا می‌کند.<br><br>
+                    در اقتصاد مدرن، تصمیم‌گیری‌های شتاب‌زده و اتکا به احساسات بازار، بزرگ‌ترین تهدید برای دارایی‌های خرد و کلان است. رشد مالی و حفظ سرمایه در برابر تورم، نیازمند یک ساختار مهندسی‌شده، توزیع هوشمندانه پورتفوی و انضباط در افق‌های زمانی است.<br><br>
+                    نگاه ما بر این است که مسیر سرمایه‌گذار باید شفاف، مبتنی بر تحلیل داده‌های واقعی و همراه با پایش مستمر ریسک باشد. ما معتقدیم سرمایه‌گذاری امن، اتفاقی نیست؛ بلکه حاصل خرد جمعی، ارزیابی دقیق بازده مورد انتظار و تعهد به ارزش‌آفرینی بلندمدت است.<br><br>
+                    🔹 <strong>برای دریافت تحلیل‌های تخصصی، مشاوره انحصاری و بهینه‌سازی سبد دارایی خود، از طریق لینک موجود در بیو یا دایرکت با کارشناسان ما در ارتباط باشید.</strong>
+                </div>
+
+                <div class="casestudy-box">
+                    <strong>📋 کیس‌استادی پروژه (Case Study):</strong>
+                    <br><strong>۱. مسئله و چالش بیزنس:</strong> مخاطب به دلیل ترس از ریسک، گارد شدیدی داشت و به سختی به محتوای مالی اعتماد می‌کرد.
+                    <br><strong>۲. نیاز پنهان مخاطب:</strong> آرامش روانی، ثبات و دیدنِ ساختار امن.
+                    <br><strong>۳. راهکار اجرایی من:</strong> طراحی پالت رنگی سرمه‌ای و طلایی مات همراه با فضای منفی وسیع؛ حذف شلوغی‌های بصری برای انتقال حس اقتدار و امنیت سازمانی.
+                </div>
+            </div>
+
+            <!-- کیس‌استادی دوم -->
+            <div class="portfolio-showcase" style="margin-top: 2rem;">
+                <div class="portfolio-title">پست اسلایدی دوم: استراتژی و ساختار کلان دارایی‌ها</div>
+                <div class="post-image-container">
+                    <img src="2.png" alt="نمونه پست اسلایدی مالی دوم">
+                </div>
+                
+                <div class="caption-box">
+                    <strong style="color: #ffffff; display: block; margin-bottom: 0.5rem;">متن کپشن پست:</strong>
+                    معماری پورتفوی؛ مهندسی تاب‌آوری سرمایه در اقتصاد تورمی.<br><br>
+                    در اکوسیستم سرمایه‌گذاری کلان، رشد اسمی به‌معنای خلق ثروت نیست. وقتی نرخ تورم از بازدهی اسمی پیشی می‌گیرد، تمرکز صرف بر سودهای اسمی، خطای استراتژیک بزرگی است که به‌مرور ارزش واقعی پورتفوی را فرسایش می‌دهد.<br><br>
+                    یک ساختار حرفه‌ای و نهادینه‌شده بر پایه‌ی چهار ستون بنیادین بنا می‌شود:<br>
+                    ۱. تخصیص استراتژیک دارایی<br>
+                    ۲. مدیریت ریسک سیستماتیک<br>
+                    ۳. صیانت از قدرت خرید<br>
+                    ۴. بازتنظیم منضبط پورتفوی (Rebalancing)<br><br>
+                    🌐 <strong>برای تحلیل اختصاصی و ارتقای ساختار سبد دارایی، از طریق دایرکت با ما در ارتباط باشید.</strong>
+                </div>
+
+                <div class="casestudy-box">
+                    <strong>📋 کیس‌استادی پروژه (Case Study):</strong>
+                    <br><strong>۱. مسئله و چالش بیزنس:</strong> مطالب مالی برای مخاطب عام سنگین بود و نرخ ریزش بالا داشت.
+                    <br><strong>۲. نیاز پنهان مخاطب:</strong> خروج از سردرگمی و دریافت پاسخ سریع و دسته‌بندی‌شده.
+                    <br><strong>۳. راهکار اجرایی من:</strong> شکستن اطلاعات به ۴ ستون بنیادین و ساختاریافته تا کاربر در یک نگاه هسته مرکزی مطلب را بگیرد.
+                </div>
+            </div>
+
+            <!-- کیس‌استادی ویدیویی -->
+            <div class="portfolio-showcase" style="margin-top: 2rem;">
+                <div class="portfolio-title">نمونه‌کار ویدیو/ریلز: تیزر سینمایی و نهادینه‌ی مارکتینگ مالی</div>
+                <div class="post-image-container">
+                    <video controls>
+                        <source src="video.mp4" type="video/mp4">
+                        مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                    </video>
+                </div>
+                
+                <div class="casestudy-box">
+                    <strong>📋 کیس‌استادی پروژه (Case Study):</strong>
+                    <br><strong>۱. مسئله و چالش بیزنس:</strong> توقف صفحه در حالتِ ایستا و نیاز مبرم به پویایی برای جذب مخاطب در ثانیه‌های اول.
+                    <br><strong>۲. نیاز پنهان مخاطب:</strong> تشنه‌ی دیدن حرکت، قدرت و جریان زنده مجموعه.
+                    <br><strong>۳. راهکار اجرایی من:</strong> تدوین ریلز با ریتم روان، سینمایی و جذاب جهت شکستن یکنواختی پیج.
+                </div>
+            </div>
+
+            <!-- کیس‌استادی استوری -->
+            <div class="portfolio-showcase" style="margin-top: 2rem;">
+                <div class="portfolio-title">استوری زنجیره‌ای و تعاملی: مهندسی رفتار مخاطب و UX</div>
+                <div class="post-image-container">
+                    <img src="story.png" alt="نمونه استوری تخصصی اینستاگرام">
+                </div>
+                
+                <div class="casestudy-box">
+                    <strong>📋 کیس‌استادی پروژه (Case Study):</strong>
+                    <br><strong>۱. مسئله و چالش بیزنس:</strong> بازدید بالا بدون تعامل یا دایرکتِ فروش.
+                    <br><strong>۲. نیاز پنهان مخاطب:</strong> تنبلی کاربر و نیاز به هدایتِ گام‌به‌گام برای مشارکت.
+                    <br><strong>۳. راهکار اجرایی من:</strong> سناریونویسی استوری ۳ بخشی (قلاب، ارائه ارزش، و نظرسنجی تعاملی) برای تبدیل مخاطب خاموش به لید فعال.
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="card">
+            <h2>ابزارها و مهارت‌های من</h2>
+            <div class="skills-container">
+                <div class="skill-badge">Instagram Management & Strategy</div>
+                <div class="skill-badge">Content Creation & Copywriting</div>
+                <div class="skill-badge">Adobe Photoshop & Illustrator</div>
+                <div class="skill-badge">Adobe Premiere</div>
+                <div class="skill-badge">Sales & Business Admin Experience</div>
+                <div class="skill-badge">Technical & Vocational Certified (فنی‌حرفه‌ای)</div>
+            </div>
+        </section>
+
+        <section id="contact" class="card">
+            <h2>ارتباط مستقیم</h2>
+            <p>اگر برای تیم شبکه‌های اجتماعی خود به ادمینی خلاق، مسئولیت‌پذیر و آشنا با اصول مارکتینگ نیاز دارید:</p>
+            <div class="contact-box">
+                <a href="mailto:mahdis.hasani.official@gmail.com" class="contact-item">
+                    <span style="font-size: 1.2rem;">📧</span>
+                    <div>
+                        <strong style="display: block; color: #ffffff;">ایمیل حرفه‌ای:</strong>
+                        <span style="font-size: 0.9rem; color: var(--text-muted);">mahdis.hasani.official@gmail.com</span>
+                    </div>
+                </a>
+                <a href="tel:+989920679935" class="contact-item">
+                    <span style="font-size: 1.2rem;">📱</span>
+                    <div>
+                        <strong style="display: block; color: #ffffff;">شماره تماس مستقیم:</strong>
+                        <span style="font-size: 0.9rem; color: var(--text-muted);">۰۹۹۲۰۶۷۹۹۳۵</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-text">© تمامی حقوق برای مهدیس حسنی محفوظ است.</div>
+        <a href="#contact" class="btn" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">ارتباط مستقیم</a>
+    </footer>
+
+</body>
+</html>
